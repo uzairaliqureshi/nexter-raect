@@ -1,0 +1,45 @@
+@import "../../index.scss";
+
+.realtors {
+  grid-column: col-end 6 / full-end;
+  background-color: $color-secondary;
+  padding: 3rem;
+  margin-left: -1px;
+
+  display: grid;
+  row-gap: 2rem;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+
+  @include mediaQuery(tablet) {
+    grid-column: 1/-1;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 2rem;
+    row-gap: 5vh;
+
+    @include mediaQuery(tablet) {
+      grid-template-columns: repeat(3, min-content max-content);
+    }
+
+    @include mediaQuery(phone) {
+      grid-template-columns: max-content max-content;
+    }
+
+    img {
+      height: 7rem;
+      border-radius: 50%;
+      display: block;
+    }
+  }
+
+  &__sold {
+    color: $color-grey-light-2;
+    text-transform: uppercase;
+  }
+}

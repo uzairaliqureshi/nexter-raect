@@ -1,0 +1,53 @@
+@import "../../index.scss";
+
+.sidebar {
+  background-color: $color-primary;
+  grid-area: 1 / sidebar-start/-1/sidebar-end;
+  display: flex;
+  justify-content: center;
+
+  @include mediaQuery(tab-land) {
+    grid-area: 1/1/2/-1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  button {
+    height: 2px;
+    border: none;
+    border-radius: 0;
+    background-color: #fff;
+    width: 4.5rem;
+    margin-top: 4rem;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 2px;
+      width: 4.5rem;
+      display: block;
+      background-color: #fff;
+    }
+
+    &::before {
+      transform: translateY(-1.5rem);
+    }
+
+    &::after {
+      transform: translateY(1.3rem);
+    }
+
+    @include mediaQuery(tab-land) {
+      margin-top: 0;
+      margin-right: 3rem;
+
+      &::before {
+        transform: translateY(-1.3rem);
+      }
+
+      &::after {
+        transform: translateY(1rem);
+      }
+    }
+  }
+}

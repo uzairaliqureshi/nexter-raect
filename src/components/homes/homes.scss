@@ -1,0 +1,52 @@
+@import "../../index.scss";
+.homes {
+  grid-column: centre-start/centre-end;
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 7rem;
+
+  @include mediaQuery(phone) {
+    gap: 4rem;
+    margin: 7rem 0;
+  }
+}
+
+.home {
+  background-color: $color-grey-light-1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3.5rem;
+
+  img {
+    width: 100%;
+    grid-area: 1/1/2/3;
+    z-index: 1;
+  }
+
+  &__name {
+    z-index: 2;
+    grid-area: 1/1/2/3;
+    align-self: flex-end;
+    justify-self: center;
+
+    font-size: 1.6rem;
+    background-color: $color-secondary;
+    height: 4rem;
+    color: #fff;
+    padding: 1rem 3rem;
+    font-weight: 400;
+    font-weight: bold;
+    transform: translateY(50%);
+  }
+
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  &__btn {
+    grid-column: 1/-1;
+  }
+}
